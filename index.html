@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOHO | Weather App</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="map-wrapper">
+            <div id="map"></div>
+        </div>
+        <h2 class="place"></h2>
+        <select onchange="changeUnit(this.value)" name="unit" id="unit">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <div class="weather-wrapper">
+            <div class="days-wrapper">
+                
+            </div>
+        </div>
+    </div>
+    <script src="/weather.js"></script>
+</body>
+</html>
+
+<!-- 
+
+
+    <div class="day-weather">
+                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
+                <div class="date">06 Sep 2022</div>
+                <div class="temp">30 C</div>
+                <div class="type">Clouds</div>
+            </div>
+            <div class="day-weather">
+                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
+                <div class="date">06 Sep 2022</div>
+                <div class="temp">30 C</div>
+                <div class="type">Clouds</div>
+            </div>
+            <div class="day-weather">
+                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
+                <div class="date">06 Sep 2022</div>
+                <div class="temp">30 C</div>
+                <div class="type">Clouds</div>
+            </div>
+            <div class="day-weather">
+                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
+                <div class="date">06 Sep 2022</div>
+                <div class="temp">30 C</div>
+                <div class="type">Clouds</div>
+            </div>
+            <div class="day-weather">
+                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
+                <div class="date">06 Sep 2022</div>
+                <div class="temp">30 C</div>
+                <div class="type">Clouds</div>
+            </div>
+            <div class="day-weather">
+                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
+                <div class="date">06 Sep 2022</div>
+                <div class="temp">30 C</div>
+                <div class="type">Clouds</div>
+            </div>
+ -->

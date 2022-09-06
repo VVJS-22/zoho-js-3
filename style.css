@@ -1,0 +1,79 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.map-wrapper {
+    height: 50vh;
+    min-height: 250px;
+    margin: 0 auto;
+}
+
+#map { 
+    position: relative; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+    height: 100%;
+}
+
+.weather-wrapper {
+    width: 95%;
+    height: 200px;
+    margin: auto;
+    overflow: auto;
+}
+
+.days-wrapper {
+    width: 100%;
+    min-width: 974px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.day-weather {
+    width: 120px;
+    height: 170px;
+    text-align: center;
+    background-color: hsl(47, 86%, 55%);
+    padding: 0.5rem;
+    margin: 0 1rem;
+    border-radius: 4px;
+}
+
+.day-weather > * {
+    margin-top: 0.2rem;
+}
+
+.day-weather > img {
+    width: 65px;
+    height: 65px;
+    padding: 0.25rem;
+    background-color: hsl(0, 0%, 98%);
+    border-radius: 50%;
+}
+
+.day-weather > .type {
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.place {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+#unit {
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
