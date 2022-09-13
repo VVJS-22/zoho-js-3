@@ -16,11 +16,11 @@
             <div id="map"></div>
         </div>
         <h2 class="place"></h2>
-        <select onchange="changeUnit(this.value)" name="unit" id="unit">
+        <select onchange="changeUnit(this.value)" name="unit" id="unit" class="hideV">
             <option value="Celsius">Celsius</option>
             <option value="Fahrenheit">Fahrenheit</option>
         </select>
-        <div class="weather-wrapper">
+        <div class="weather-wrapper hide">
             <div class="days-wrapper">
                 
             </div>
@@ -28,48 +28,10 @@
                 <div style="display: flex; justify-content: center; align-items: center;"><img src="/404.jpg" alt="404" width="250px" height="200px"><h3>Data Not Found</h3></div>
             </div>
         </div>
+        <div class="loading hide">
+            <div class="loader"></div>
+        </div>
     </div>
     <script src="/weather.js"></script>
 </body>
 </html>
-
-<!-- 
-
-
-    <div class="day-weather">
-                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
-                <div class="date">06 Sep 2022</div>
-                <div class="temp">30 C</div>
-                <div class="type">Clouds</div>
-            </div>
-            <div class="day-weather">
-                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
-                <div class="date">06 Sep 2022</div>
-                <div class="temp">30 C</div>
-                <div class="type">Clouds</div>
-            </div>
-            <div class="day-weather">
-                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
-                <div class="date">06 Sep 2022</div>
-                <div class="temp">30 C</div>
-                <div class="type">Clouds</div>
-            </div>
-            <div class="day-weather">
-                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
-                <div class="date">06 Sep 2022</div>
-                <div class="temp">30 C</div>
-                <div class="type">Clouds</div>
-            </div>
-            <div class="day-weather">
-                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
-                <div class="date">06 Sep 2022</div>
-                <div class="temp">30 C</div>
-                <div class="type">Clouds</div>
-            </div>
-            <div class="day-weather">
-                <img src="http://openweathermap.org/img/w/04d.png" alt="Clouds">
-                <div class="date">06 Sep 2022</div>
-                <div class="temp">30 C</div>
-                <div class="type">Clouds</div>
-            </div>
- -->

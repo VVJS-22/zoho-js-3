@@ -3,9 +3,18 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+
 }
 
 .map-wrapper {
@@ -24,9 +33,9 @@ body {
 
 .weather-wrapper {
     width: 95%;
-    height: 200px;
     margin: auto;
     overflow: auto;
+    padding-bottom: 1rem;
 }
 
 .days-wrapper {
@@ -87,3 +96,30 @@ body {
 .hide {
     display: none;
 }
+
+.hideV {
+    visibility: hidden;
+}
+
+.loading {
+    width: 120px;
+    height: 120px;
+    border: 12px solid #ffffff;
+    border-top: 12px solid rgb(95, 187, 229);
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px 4px hsl(0, 0%, 90%), inset 0px 0px 8px 4px hsl(0, 0%, 90%);
+    margin: 0 auto;
+    transform: translateY(65%);
+    animation: loading 1.5s linear 0s infinite normal none;
+}
+
+@keyframes loading {
+    from {
+        transform: translateY(65%) rotateZ(0deg);
+    }
+    to {
+        transform: translateY(65%) rotateZ(360deg);
+    }
+}
+
+
