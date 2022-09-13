@@ -48,34 +48,48 @@ const getPlaceName = async (lat, lng) => {
 }
 
 const getWeather = async (place) => {
+    const wrapper = document.querySelector(".days-wrapper");
+    const unitChanger = document.querySelector("#unit");
+    const notFound = document.querySelector(".not-found");
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=10d535d8dad64606479a529972f16544&units=metric`)
-        const data = await response.json()
-        const set = new Set()
-        const unique = data.list.filter(item => {
-            const date = item.dt_txt.slice(8,10)
-            const isDuplicate = set.has(date)
-            set.add(date)
-            if (!isDuplicate) {
-                return true
+        if (place) {
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${place}&appid=10d535d8dad64606479a529972f16544&units=metric`)
+            const data = await response.json()
+            const set = new Set()
+            const unique = data.list.filter(item => {
+                const date = item.dt_txt.slice(8,10)
+                const isDuplicate = set.has(date)
+                set.add(date)
+                if (!isDuplicate) {
+                    return true
+                }
+                return false
+            })
+            wrapper.innerHTML = "";
+            unitChanger.classList.contains("hide") && unitChanger.classList.remove("hide");
+            wrapper.classList.remove("hide");
+            notFound.classList.add("hide");
+            unique.map(item => {
+                const date = String(new Date(item.dt_txt.slice(0,10))).slice(4,15);
+                wrapper.innerHTML += `<div class="day-weather">
+                <img src="http://openweathermap.org/img/w/${item.weather[0].icon}.png" alt="Clouds">
+                <div class="date">${date}</div>
+                <div class="temp"><span class="temp-value">${item.main.temp.toFixed(2)}</span> <span class="temp-unit">°C</span></div>
+                <div class="type">${item.weather[0].main}</div>
+                </div>`
+            });
+            if (unitChanger.value === "Fahrenheit") {
+                changeUnit("Fahrenheit")
             }
-            return false
-        })
-    document.querySelector(".days-wrapper").innerHTML = ""
-    unique.map(item => {
-        const date = String(new Date(item.dt_txt.slice(0,10))).slice(4,15)
-        document.querySelector(".place").innerText = place || "Unknown Place"
-       document.querySelector(".days-wrapper").innerHTML += `<div class="day-weather">
-            <img src="http://openweathermap.org/img/w/${item.weather[0].icon}.png" alt="Clouds">
-            <div class="date">${date}</div>
-            <div class="temp"><span class="temp-value">${item.main.temp.toFixed(2)}</span> <span class="temp-unit">°C</span></div>
-            <div class="type">${item.weather[0].main}</div>
-        </div>`
-
-        return unique
-    });
+        } else {
+            wrapper.classList.add("hide");
+            notFound.classList.remove("hide");
+        }
+        document.querySelector(".place").innerText = place || "";
     } catch (error) {
-        return alert("Undefined Location!")
+        document.querySelector(".place").innerText = "";
+        wrapper.classList.add("hide");
+        notFound.classList.remove("hide");
     }
 }
 

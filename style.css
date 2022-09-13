@@ -31,12 +31,17 @@ body {
 
 .days-wrapper {
     width: 100%;
-    min-width: 974px;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 940px) {
+    .days-wrapper {
+        justify-content: flex-start;
+    }
 }
 
 .day-weather {
@@ -47,6 +52,7 @@ body {
     padding: 0.5rem;
     margin: 0 1rem;
     border-radius: 4px;
+    flex: 0 0 auto;
 }
 
 .day-weather > * {
@@ -76,4 +82,8 @@ body {
     float: right;
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
 }
